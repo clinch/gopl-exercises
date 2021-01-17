@@ -17,10 +17,10 @@ func main() {
 	}
 	fmt.Println(s)
 	nano := time.Since(start).Nanoseconds()
-	fmt.Println(fmt.Sprintf("Loop Duration: %dns", nano))
+	fmt.Printf("Loop Duration: %dns\n", nano)
 
 	start = time.Now()
 	fmt.Println(strings.Join(os.Args[1:], " "))
 	nano = time.Since(start).Nanoseconds()
-	fmt.Println(fmt.Sprintf("Join Duration: %dns", nano))
+	fmt.Printf("Join Duration: %dns\n", nano)
 }
