@@ -1,12 +1,13 @@
-// package main will calculate the popcount of integers
+// Package popcount will calculate the popcount of integers
 package main
 
 import (
 	"fmt"
 
-	"gopl.io/ch2/popcount"
+	"popcount"
 )
 
 func main() {
 	fmt.Println(popcount.PopCount(45))
+	fmt.Println(popcount.PopCountLoop(45))
 }

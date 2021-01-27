@@ -1,5 +1,5 @@
 // Package popcount counts the number of set bits in a uint64 value
-package main
+package popcount
 
 // pc[i] is the population count of i.
 var pc [256]byte
@@ -20,4 +20,13 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(5*8))] +
 		pc[byte(x>>(6*8))] +
 		pc[byte(x>>(7*8))])
+}
+
+// PopCountLoop returns the population count (number of set bits) of x.
+func PopCountLoop(x uint64) int {
+	var count int
+	for i := uint64(0); i < 8; i++ {
+		count += int(pc[byte(x>>(i*8))])
+	}
+	return count
 }
